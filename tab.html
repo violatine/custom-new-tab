@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Tab</title>
+  <style>
+    body {
+      margin: 0;
+      padding-top: 15%;
+      font-family: sans-serif;
+      text-align: center;
+      color: #fff;
+      background: url('https://i.postimg.cc/D0vyFbvL/7bcecf0eca509d32878cf705de6d0145.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.6);
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #logo {
+      width: 300px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 10px #000);
+    }
+
+    #search {
+      width: 60%;
+      max-width: 500px;
+      padding: 10px 15px;
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      outline: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    #search::placeholder {
+      color: #aaa;
+    }
+
+    .pinned {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .pinned a {
+      text-decoration: none;
+      color: #ff69b4; /* hot pink */
+      font-size: 18px;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      transition: background 0.2s;
+      box-shadow: 0 0 15px #ff69b4;
+      font-weight: 600;
+    }
+
+    .pinned a:hover {
+      background: rgba(255, 105, 180, 0.2);
+      box-shadow: 0 0 25px #ff1493;
+    }
+
+    /* Google account container */
+    #account {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0,0,0,0.6);
+      padding: 5px 10px;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+
+    #account:hover {
+      background: rgba(255, 105, 180, 0.3);
+    }
+
+    #account img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ff69b4;
+    }
+
+    #account span {
+      color: #ff69b4;
+      font-weight: 600;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+
+
+
+ 
+
+
+
+    /* Account container with dropdown */
+    #account-wrapper {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+
+    #account {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0,0,0,0.6);
+      padding: 5px 12px;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+      color: #ff69b4;
+      font-weight: 600;
+      text-decoration: none;
+      width: max-content;
+    }
+
+    #account:hover {
+      background: rgba(255, 105, 180, 0.3);
+    }
+
+    #account img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ff69b4;
+      flex-shrink: 0;
+    }
+
+    #account span {
+      white-space: nowrap;
+    }
+
+    /* Dropdown menu hidden by default */
+    #account-dropdown {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      background: rgba(0,0,0,0.85);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(255, 20, 147, 0.4);
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      font-weight: normal;
+      font-size: 14px;
+      z-index: 1100;
+      user-select: none;
+    }
+
+    /* Show dropdown on hover */
+    #account-wrapper:hover #account-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #account-dropdown a {
+      display: block;
+      padding: 12px 18px;
+      color: #ff69b4;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 105, 180, 0.3);
+      transition: background 0.2s;
+    }
+
+    #account-dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    #account-dropdown a:hover {
+      background: rgba(255, 105, 180, 0.2);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="account-wrapper">
+    <a id="account" href="https://myaccount.google.com" target="_blank" title="Go to Google Account">
+      <img src="https://i.postimg.cc/W3Rw9s2Q/3-kuromi-straberry-jean-booker.jpg" alt="Profile Picture">
+      <span>violatine</span>
+    </a>
+    <div id="account-dropdown">
+      <a href="https://myaccount.google.com" target="_blank">Manage your Google Account</a>
+      <a href="https://accounts.google.com/SignUp" target="_blank">Add another account</a>
+      <a href="https://accounts.google.com/Logout" target="_blank">Sign out</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <img id="logo" src="http://i.picasion.com/gl/92/ku4h.gif" alt="My Google">
+  <form method="GET" action="https://www.google.com/search">
+    <input id="search" type="text" name="q" placeholder="Search the web...">
+  </form>
+  <div class="pinned">
+    <a href="https://youtube.com">YouTube</a>
+    <a href="https://canvas.bham.ac.uk/">Canvas</a>
+    <a href="https://uk.pinterest.com/">Pinterest</a>
+    <a href="https://twitter.com">Twitter</a>
+  </div>
+</body>
+</html>
